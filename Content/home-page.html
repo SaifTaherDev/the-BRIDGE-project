@@ -3,64 +3,331 @@
 <head>
     <link href="../Styles/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="../Styles/bootstrap/myTheme.css" rel="stylesheet" />
+    <link href="../Styles/hover.css" rel="stylesheet" />
+    <link href="../Styles/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <meta charset="utf-8" />
     <title>Home Page</title>
+    <style>
+        @font-face {
+            font-family: 'OstrichSans-Black';
+            src: url('../Fonts/OstrichSans-Black.otf') format('opentype');
+        }
+
+        @keyframes floatImg {
+            0% {
+                bottom: 1em;
+            }
+
+            50% {
+                bottom: 0em;
+            }
+
+            100% {
+                bottom: 1em;
+            }
+        }
+
+        nav {
+            background: hsl(100, 0%, 20%);
+            transition-duration: 0.5s;
+        }
+
+            nav img {
+                width: 6em;
+            }
+
+            nav img, nav span {
+                cursor: pointer;
+            }
+
+        .navButtons {
+            height: 100%;
+            border: 5px solid transparent;
+        }
+
+            .navButtons:hover {
+                border-top-color: #954FA5;
+            }
+
+        .navButtons, #signIn {
+            display: inline-block;
+            padding: 1em;
+            margin: 0.25em;
+            margin-top: 0;
+            color: white;
+            transition-duration: 0.5s;
+        }
+
+        #signIn {
+            border-radius: 5em;
+            background: white;
+            text-align: center;
+            width: 7em;
+            height: 1em;
+            line-height: 0;
+            color: #954FA5;
+        }
+
+        header {
+            height: 30em;
+        }
+
+        #colorfulCoverThingy {
+            background: linear-gradient(0deg, #4A528E, #954FA5 80%);
+            display: flex;
+            align-items: flex-end;
+        }
+
+        #colorfulCoverThingy, #headerMarketing {
+            height: 100%;
+        }
+
+        #headerMarketing {
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            #headerMarketing p {
+                font-family: OstrichSans-Black;
+                font-size: 3em;
+                color: white;
+            }
+
+            #headerMarketing img {
+                width: 25em;
+                animation-name: floatImg;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                position: relative;
+            }
+
+        #marketingContainer {
+            opacity: 0;
+            transition-duration: 1s;
+        }
+
+        #textContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        #realMarketing {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5em;
+            height: 35em;
+            background: hsl(100, 0%, 20%);
+            color: white;
+        }
+
+        #imgOne {
+            width: 27.5em;
+        }
+
+        #imgTwo {
+            width: 43em;
+        }
+
+        #imgThree {
+            width: 27.5em;
+        }
+
+        #imgFour {
+            width: 35em;
+        }
+
+        #imgFive {
+            width: 28em;
+        }
+
+        #marketImgContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        #marketHeading, .whoAreWe h2 {
+            font-family: OstrichSans-Black;
+        }
+
+        .whoAreWe {
+            background: #4A528E;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        #cairoContainer {
+            height: 20em;
+        }
+
+        footer {
+            background: hsl(100, 0%, 20%);
+            color: white;
+        }
+        footer a{
+            color:white;
+            font-size:1.5em;
+            text-decoration:underline;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+    <nav style="padding:0;" class="navbar navbar-default fixed-top">
+        <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="hvr-pulse navbar-brand" href="Home-Page.html">
+                    <img src="images/bridgeLogo.png" />
+                </a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+            <div class="navbar-right">
+                <span class="navButtons">About Us & Pricing</span>
+                <span class="navButtons">Our Work</span>
+                <span class="navButtons">Contact Us</span>
+                <span class="hvr-back-pulse" id="signIn">Sign in</span>
+            </div>
+        </div>
     </nav>
+    <header>
+        <div id="colorfulCoverThingy">
+            <div id="headerMarketing" class="container">
+                <p class="bounceIn"><b>BRDIGE</b> BUILDS HIGH-QUALITY WEBSITES AND DELIVERS EFFICENT, HIGHLY-SCALABLE SOLUTIONS. LEARN MORE <a href="about.html">HERE</a>.</p>
+                <img src="images/highQualityBackground.png" />
+            </div>
+        </div>
+    </header>
+    <div id="realMarketing" class="container jumbotron">
+        <div id="marketingContainer" class="row">
+            <div id="textContainer" class="col-6">
+                <h2>
+                    <b id="marketHeading"></b>
+                </h2>
+                <h4 id="marketPara"></h4>
+            </div>
+            <div class="col-6" id="marketImgContainer">
+            </div>
+        </div>
+    </div>
+    <div class="container jumbotron whoAreWe">
+        <h2>WHO ARE WE?</h2>
+        <h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mauris ex, egestas eu convallis eu, ullamcorper sed odio. Mauris ac cursus tellus. Proin eget vehicula metus. Nam vitae rutrum dui. Quisque consectetur, eros eget maximus maximus, mi nulla imperdiet dui, ullamcorper viverra leo urna vitae ipsum. Nunc aliquet, nisi id tincidunt pellentesque, nibh diam facilisis felis, in venenatis tellus quam a eros. Nam nec cursus lectus. Suspendisse ipsum nisi, suscipit vel ex in, vestibulum feugiat ex. Vivamus turpis lorem, ornare sed pellentesque in, consequat sed nisl. Nam a cursus eros. Nam eu nisi id lorem tincidunt rutrum sit amet sed magna. Sed ipsum elit, venenatis sit amet ex non, laoreet semper elit. Suspendisse tincidunt sodales dolor nec sollicitudin. Vivamus auctor pellentesque lorem id pulvinar. Sed suscipit lacus eu efficitur lacinia.
+        </h4>
+
+    </div>
+    <div class="container">
+        <div id="cairoContainer" class="parallax-window" data-parallax="scroll" data-image-src="images/cairo.jpg">
+        </div>
+    </div>
+    <div style="margin-bottom:2em;" class="container jumbotron whoAreWe">
+        <h2>GETTING STARTED</h2>
+        <h4>
+            Ut orci sapien, molestie nec mauris nec, maximus venenatis neque. Donec vitae felis eget urna ultrices dictum. Cras feugiat feugiat feugiat. Sed eros felis, placerat non vestibulum et, molestie a nunc. Donec sit amet justo eget ex dignissim congue quis eget diam. Fusce molestie augue et faucibus efficitur. Vivamus a est leo. Vivamus lobortis arcu a nunc efficitur, non scelerisque arcu venenatis. Vivamus facilisis vestibulum erat. Curabitur at porttitor arcu, eu accumsan eros. Nullam hendrerit varius nisi at congue. Phasellus nec sagittis urna. Sed scelerisque pharetra nulla, ut tincidunt lacus hendrerit quis. Duis neque est, dignissim ac molestie at, varius in eros. Phasellus felis est, varius et nisi vitae, hendrerit aliquam tortor. Fusce accumsan est non porttitor tincidunt.
+        </h4>
+    </div>
+    <footer class="page-footer font-small pt-4">
+
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h4 class="text-uppercase">The Bridge Company</h4>
+                    <br />
+                    <h5 style="width:20em">Vivamus malesuada, velit in aliquam dignissim, mauris diam congue lectus, in vulputate leo lectus sodales risus. Donec sed justo urna. Sed enim mauris, euismod vel varius non, tempus sit amet ligula.</h5>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Buisness Inqueries:</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">+201119542742</a>
+                        </li>
+                        <li>
+                            <a href="#!">+201147788643</a>
+                        </li>
+                        <li>
+                            <a href="#!">buisnessEmail@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="#!">buisnessEmailTwo@gmail.com</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase">Follow us on:</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!"><i class="fab fa-facebook-square"></i>&nbsp;facebookPage</a>
+                        </li>
+                        <li>
+                            <a href="#!"><i class="fab fa-twitter-square"></i>&nbsp;twitterPage</a>
+                        </li>
+                        <li>
+                            <a href="#!"><i class="fab fa-google-plus-square"></i>&nbsp;google+Page</a>
+                        </li>
+                        <li>
+                            <a href="#!"><i class="fab fa-youtube"></i>&nbsp;youtubeChannel</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright:
+            <a href="Home-Page.html"> Bridge</a>
+        </div>
+    </footer>
     <script src="../Scripts/bootstrap/jquery-3.3.1.js"></script>
+    <script src="../Scripts/parallax.js"></script>
     <script src="../Scripts/bootstrap/bootstrap.js"></script>
+    <script>
+        var marketingContainer = document.body.querySelector("#marketingContainer");
+        var marketHeading = document.body.querySelector("#marketHeading");
+        var marketPara = document.body.querySelector("#marketPara");
+        var marketImgContainer = document.body.querySelector("#marketImgContainer");
+
+        class marketObject {
+            constructor(heading, paragraph, image) {
+                this.heading = heading;
+                this.paragraph = paragraph;
+                this.image = image;
+            }
+        };
+
+        var marketObjects = [
+            new marketObject("High-Quality & Robust", "Bridge will make use of the latest technologies in the market to ensure you are delivered with the highest-quality of websites.", '<img id="imgOne" src="images/headerImage.png" />'),
+            new marketObject("Web Design & Layout", "Bridge was very careful about choosing whom to hire as web designers. These designers are like no other! We have only the most creative, passionate and skilled web designers! Don't worry, your website <b>will</b> look awesome!", '<img id="imgTwo" src="images/webDesign.png" />'),
+            new marketObject("Secure", "Equipped with the most powerful cybersecurity libraries and frameworks at its arsenal, Bridge <b>will not</b> let an intruder through.", '<img id="imgThree" src="images/hacker.png" />'),
+            new marketObject("Scalability", "<h4>Whether you demand a small website for your online clothing store, or a major website to manage all of your company's assets, Bridge will deliver you an efficent, highly-scalable solution that fits your different needs.</h4>", '<img id="imgFour" src="images/scalability.png" />'),
+            new marketObject("SEO", "<h4>You needn't worry anymore about showing up in the top results of the most popular search engines. Our expereince with search algorithims enables us to optimize your website to show at the top of any related search.</h4>", '<img id="imgFive" src="images/SEO.png" />'),
+        ]
+
+        window.onload = function slideShow() {
+            marketingContainer.style.opacity = 1;
+            marketHeading.innerHTML = marketObjects[0].heading;
+            marketPara.innerHTML = marketObjects[0].paragraph;
+            marketImgContainer.innerHTML = marketObjects[0].image;
+            var counter = 1;
+            setInterval(function () {
+                marketingContainer.style.opacity = 0;
+                setTimeout(function () {
+                    marketingContainer.style.opacity = 1;
+                    marketHeading.innerHTML = marketObjects[counter].heading;
+                    marketPara.innerHTML = marketObjects[counter].paragraph;
+                    marketImgContainer.innerHTML = marketObjects[counter].image;
+                    if (counter == 4) {
+                        counter = -1;
+                    }
+                    counter++;
+                }, 1100)
+            }, 7500)
+        }
+    </script>
 </body>
 </html>

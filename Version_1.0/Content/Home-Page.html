@@ -6,177 +6,14 @@
     <link href="../Styles/hover.css" rel="stylesheet" />
     <link href="../Styles/animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="../Styles/homePage.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <title>Home Page</title>
     <style>
-        @font-face {
-            font-family: 'OstrichSans-Black';
-            src: url('../Fonts/OstrichSans-Black.otf') format('opentype');
-        }
-
-        @keyframes floatImg {
-            0% {
-                bottom: 1em;
-            }
-
-            50% {
-                bottom: 0em;
-            }
-
-            100% {
-                bottom: 1em;
-            }
-        }
-
-        nav {
-            background: hsl(100, 0%, 20%);
-            transition-duration: 0.5s;
-        }
-
-            nav img {
-                width: 6em;
-            }
-
-            nav img, nav span {
-                cursor: pointer;
-            }
-
-        .navButtons {
-            height: 100%;
-            border: 5px solid transparent;
-        }
-
-            .navButtons:hover {
-                border-top-color: #954FA5;
-            }
-
-        .navButtons, #signIn {
-            display: inline-block;
-            padding: 1em;
-            margin: 0.25em;
-            margin-top: 0;
-            color: white;
-            transition-duration: 0.5s;
-        }
-
-        #signIn {
-            border-radius: 5em;
-            background: white;
-            text-align: center;
-            width: 7em;
-            height: 1em;
-            line-height: 0;
-            color: #954FA5;
-        }
-
-        header {
-            height: 30em;
-        }
-
-        #colorfulCoverThingy {
-            background: linear-gradient(0deg, #4A528E, #954FA5 80%);
-            display: flex;
-            align-items: flex-end;
-        }
-
-        #colorfulCoverThingy, #headerMarketing {
-            height: 100%;
-        }
-
-        #headerMarketing {
-            height: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-            #headerMarketing p {
-                font-family: OstrichSans-Black;
-                font-size: 3em;
-                color: white;
-            }
-
-            #headerMarketing img {
-                width: 25em;
-                animation-name: floatImg;
-                animation-duration: 1.5s;
-                animation-iteration-count: infinite;
-                position: relative;
-            }
-
-        #marketingContainer {
-            opacity: 0;
-            transition-duration: 1s;
-        }
-
-        #textContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-        }
-
-        #realMarketing {
-            display: flex;
-            justify-content: center;
-            margin-top: 2.5em;
-            height: 35em;
-            background: hsl(100, 0%, 20%);
-            color: white;
-        }
-
-        #imgOne {
-            width: 27.5em;
-        }
-
-        #imgTwo {
-            width: 43em;
-        }
-
-        #imgThree {
-            width: 27.5em;
-        }
-
-        #imgFour {
-            width: 35em;
-        }
-
-        #imgFive {
-            width: 28em;
-        }
-
-        #marketImgContainer {
-            display: flex;
-            justify-content: center;
-        }
-
-        #marketHeading, .whoAreWe h2 {
-            font-family: OstrichSans-Black;
-        }
-
-        .whoAreWe {
-            background: #4A528E;
-            color: white;
-            margin-bottom: 0;
-        }
-
-        #cairoContainer {
-            height: 20em;
-        }
-
-        footer {
-            background: hsl(100, 0%, 20%);
-            color: white;
-        }
-        footer a{
-            color:white;
-            font-size:1.5em;
-            text-decoration:underline;
-        }
     </style>
 </head>
 <body>
-    <nav style="padding:0;" class="navbar navbar-default fixed-top">
+    <nav style="padding:0;" class="navbar navbar-default fixed-top d-none d-md-block">
         <div class="container">
             <div class="navbar-header">
                 <a class="hvr-pulse navbar-brand" href="Home-Page.html">
@@ -187,27 +24,50 @@
                 <span class="navButtons">About Us & Pricing</span>
                 <span class="navButtons">Our Work</span>
                 <span class="navButtons">Contact Us</span>
-                <span class="hvr-back-pulse" id="signIn">Sign in</span>
+                <span class="hvr-back-pulse signIn">Sign in</span>
+            </div>
+        </div>
+    </nav>
+    <nav id="smallNavBar" style="padding:0;" class="navbar navbar-default d-block d-md-none">
+        <div style="margin:0;" class="container-fluid row">
+            <div class="col-5">
+                <ul class="cf">
+                    <li>
+                        <a id="svgContainer" class="dropdown" href="#"></a>
+                        <ul id="smoothDropDown">
+                            <li><a href="#" class="hvr-back-pulse signIn col-12">About us</a></li>
+                            <li><a href="#" class="hvr-back-pulse signIn col-12">Our Work</a></li>
+                            <li><a href="#" class="hvr-back-pulse signIn col-12">Contact Us</a></li>
+                            <li><a href="#" class="hvr-back-pulse signIn col-12">Sign in</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-header col-7">
+                <a class="navbar-brand" href="Home-Page.html">
+                    <img src="images/bridgeLogo.png" class="hvr-pulse" />
+                </a>
             </div>
         </div>
     </nav>
     <header>
         <div id="colorfulCoverThingy">
             <div id="headerMarketing" class="container">
-                <p class="bounceIn"><b>BRDIGE</b> BUILDS HIGH-QUALITY WEBSITES AND DELIVERS EFFICENT, HIGHLY-SCALABLE SOLUTIONS. LEARN MORE <a href="about.html">HERE</a>.</p>
-                <img src="images/highQualityBackground.png" />
+                <p class="d-none d-md-block bounceIn"><b>BRDIGE</b> BUILDS HIGH-QUALITY WEBSITES AND DELIVERS EFFICENT, HIGHLY-SCALABLE SOLUTIONS. LEARN MORE <a href="about.html">HERE</a></p>
+                <p class="d-block d-md-none bounceIn">WELCOME TO <b>BRIDGE</b>, THE ORIGINAL SOFTWARE HOUSE. LEARN MORE <a href="about.html">HERE</a>.</p>
+                <img class="d-none d-md-block" src="images/highQualityBackground.png" />
             </div>
         </div>
     </header>
     <div id="realMarketing" class="container jumbotron">
         <div id="marketingContainer" class="row">
-            <div id="textContainer" class="col-6">
+            <div id="textContainer" class="col-12 col-md-6">
                 <h2>
                     <b id="marketHeading"></b>
                 </h2>
                 <h4 id="marketPara"></h4>
             </div>
-            <div class="col-6" id="marketImgContainer">
+            <div class="d-none d-md-flex col-6" id="marketImgContainer">
             </div>
         </div>
     </div>
@@ -228,69 +88,82 @@
             Ut orci sapien, molestie nec mauris nec, maximus venenatis neque. Donec vitae felis eget urna ultrices dictum. Cras feugiat feugiat feugiat. Sed eros felis, placerat non vestibulum et, molestie a nunc. Donec sit amet justo eget ex dignissim congue quis eget diam. Fusce molestie augue et faucibus efficitur. Vivamus a est leo. Vivamus lobortis arcu a nunc efficitur, non scelerisque arcu venenatis. Vivamus facilisis vestibulum erat. Curabitur at porttitor arcu, eu accumsan eros. Nullam hendrerit varius nisi at congue. Phasellus nec sagittis urna. Sed scelerisque pharetra nulla, ut tincidunt lacus hendrerit quis. Duis neque est, dignissim ac molestie at, varius in eros. Phasellus felis est, varius et nisi vitae, hendrerit aliquam tortor. Fusce accumsan est non porttitor tincidunt.
         </h4>
     </div>
-    <footer class="page-footer font-small pt-4">
-
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h4 class="text-uppercase">The Bridge Company</h4>
-                    <br />
-                    <h5 style="width:20em">Vivamus malesuada, velit in aliquam dignissim, mauris diam congue lectus, in vulputate leo lectus sodales risus. Donec sed justo urna. Sed enim mauris, euismod vel varius non, tempus sit amet ligula.</h5>
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Buisness Inqueries:</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!">+201119542742</a>
-                        </li>
-                        <li>
-                            <a href="#!">+201147788643</a>
-                        </li>
-                        <li>
-                            <a href="#!">buisnessEmail@gmail.com</a>
-                        </li>
-                        <li>
-                            <a href="#!">buisnessEmailTwo@gmail.com</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Follow us on:</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#!"><i class="fab fa-facebook-square"></i>&nbsp;facebookPage</a>
-                        </li>
-                        <li>
-                            <a href="#!"><i class="fab fa-twitter-square"></i>&nbsp;twitterPage</a>
-                        </li>
-                        <li>
-                            <a href="#!"><i class="fab fa-google-plus-square"></i>&nbsp;google+Page</a>
-                        </li>
-                        <li>
-                            <a href="#!"><i class="fab fa-youtube"></i>&nbsp;youtubeChannel</a>
-                        </li>
-                    </ul>
-
-                </div>
+    <footer class="page-footer pt-4">
+        <div id="linksContainer">
+            <div id="logoContainer">
+                <img src="images/bridgeLogo.png" />
             </div>
-        </div>
-        <div class="footer-copyright text-center py-3">
-            © 2018 Copyright:
-            <a href="Home-Page.html"> Bridge</a>
+            <div id="buisnessLinks">
+                <h4>For Buisness Inquiries:</h4>
+                <h5>+201119542742</h5>
+                <h5>+201119542742</h5>
+                <h5><a href="#"><i class="fa fa-envelope"> exampleGmail@gmail.com</i></a></h5>
+                <h5><a href="#"><i class="fa fa-envelope"> exampleGmailTwo@gmail.com</i></a></h5>
+            </div>
+            <div id="socialMedia">
+                <h4>Follow Us On:</h4>
+                <h5><a href="#"><i class="fab fa-facebook-square"> facbookPage</i></a></h5>
+                <h5><a href="#"><i class="fab fa-twitter-square"> twitterPage</i></a></h5>
+                <h5><a href="#"><i class="fab fa-google-plus-square"> googlePlusPage</i></a></h5>
+                <h5><a href="#"><i class="fab fa-youtube"> youtubePage</i></a></h5>
+            </div>
         </div>
     </footer>
     <script src="../Scripts/bootstrap/jquery-3.3.1.js"></script>
-    <script src="../Scripts/parallax.js"></script>
     <script src="../Scripts/bootstrap/bootstrap.js"></script>
+    <script src="../Scripts/snap.svg-min.js"></script>
+    <script src="../Scripts/snap-animation-states.js"></script>
+    <script src="../Scripts/parallax.js"></script>
     <script>
         var marketingContainer = document.body.querySelector("#marketingContainer");
         var marketHeading = document.body.querySelector("#marketHeading");
         var marketPara = document.body.querySelector("#marketPara");
         var marketImgContainer = document.body.querySelector("#marketImgContainer");
+
+        var dropDownContainer = document.body.querySelector('#svgContainer');
+        var dropDown = document.body.querySelector('nav li ul');
+        var dropCount = 0;
+
+        dropDownContainer.addEventListener("click", function () {
+            dropDown.style.visibility = "invisible";
+            dropDown.style.top = "50px";
+            dropDown.style.opacity = "0";
+            dropCount++;
+            if (dropCount % 2 == 0) {
+                dropDown.style.visibility = "invisible";
+                dropDown.style.top = "50px";
+                dropDown.style.opacity = "0";
+            } else {
+                dropDown.style.visibility = "visible";
+                dropDown.style.top = "55px";
+                dropDown.style.opacity = "1";
+
+            }
+        })
+        var iconHamburger = {
+            selector: '#svgContainer',
+            svg: 'images/displayContextMenu.svg',
+            transitionTime: 250,
+            states: {
+                open: [
+                    { id: "top-lower", element: ".hamburger-top", y: 20 },
+                    { id: "bottom-raise", element: ".hamburger-bottom", y: -20 },
+                    { waitFor: "top-lower", element: "g", r: 45 },
+                    { waitFor: "top-lower", element: ".hamburger-bottom", r: -45 },
+                ],
+                closed: [
+                    { id: "top-angle", element: "g", r: 0 },
+                    { id: "bottom-angle", element: ".hamburger-bottom", r: 0 },
+                    { waitFor: "top-angle", element: ".hamburger-top", y: 0 },
+                    { waitFor: "bottom-angle", element: ".hamburger-bottom", y: 0 },
+                ]
+            },
+            events: [
+                { event: "click", state: ["open", "closed"] }
+            ]
+        };
+
+        SnapStates(iconHamburger);
 
         class marketObject {
             constructor(heading, paragraph, image) {
